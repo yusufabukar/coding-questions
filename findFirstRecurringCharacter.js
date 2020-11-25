@@ -8,7 +8,7 @@
 function firstRecurringCharacter(array) {
     // Can't be bothered to do input validation at 1:52am...
 
-    let seenCharacters = {}
+    let seenCharacters = {};
 
     for (let character of array) {
         if (!seenCharacters[character]) {
