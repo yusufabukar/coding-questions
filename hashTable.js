@@ -71,5 +71,4 @@ myHashTable.get('pomegranates');
 myHashTable.set('oranges', 4);
 myHashTable.get('oranges');
 
-console.log(myHashTable.data);
 myHashTable.keys()
