@@ -35,6 +35,7 @@ function reverse3(string) {
 const reverse4 = string => [...string].reverse.join(''); // [...string] spread operator
 
 // Tests
+
 reverse('This is not a palindrome.');
 reverse2('This is not a palindrome.');
 reverse3('This is not a palindrome.');
