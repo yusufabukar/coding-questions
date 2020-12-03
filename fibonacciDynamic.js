@@ -28,12 +28,26 @@ function fibonacciMemoised() {
     };
 };
 
+let calculations3 = 0;
+function fibonacciBottomUp(n) {
+    let answer = [0, 1];
+
+    for (let i = 2; i <= n; i++) {
+        calculations3++;
+        answer.push(answer[i - 2] + answer[i - 1]);
+    };
+
+    return answer.pop();
+};
+
 // Tests
 
-console.log(fibonacci(33));
-console.log('This non-memoised calculations took', calculations1, 'calculations.');
+console.log('Recursive:', fibonacci(33));
+console.log('This recursive calculation took', calculations1, 'calculations.');
 
 let fibMemo = fibonacciMemoised();
-console.log(fibMemo(33));
-console.log(fibMemo(33));
-console.log('This memoised calculations took', calculations2, 'calculations.');
+console.log('Memoised:', fibMemo(33));
+console.log('This memoised calculation took', calculations2, 'calculations.');
+
+console.log('Bottom-Up:',fibonacciBottomUp(33));
+console.log('This bottom-up calculation took', calculations3, 'calculations.');
