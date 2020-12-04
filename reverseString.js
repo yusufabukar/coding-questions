@@ -1,6 +1,5 @@
-// Create a function that reverses a string.
+// Implement a function that reverses a string using iteration...and then recursion!
 
-// My Solution
 function reverseString(string) {
 	let stringArray = string.split('');
 	let reverseArray = [];
@@ -11,6 +10,10 @@ function reverseString(string) {
 
 	return reverseArray.join('');
 };
+
+const reverseStringIterative = string => string.split('').reverse().join('');
+
+const reverseStringRecursive = string => string === '' ? '' : reverseStringRecursive(string.substr(1)) + string.charAt(0);
 
 // Other Solutions
 
@@ -28,15 +31,17 @@ function reverseString2(string) {
 	return reverseArray.join('');
 };
 
-function reverse3(string) {
+function reverseString3(string) {
 	return string.split('').reverse().join(''); // Array.reverse() method removes need for for loop
 };
 
-const reverse4 = string => [...string].reverse.join(''); // [...string] spread operator
+const reverseString4 = string => [...string].reverse().join(''); // [...string] spread operator
 
 // Tests
 
-reverse('This is not a palindrome.');
-reverse2('This is not a palindrome.');
-reverse3('This is not a palindrome.');
-reverse4('This is not a palindrome.');
+reverseString('This is not a palindrome.');
+reverseStringIterative('This is not a palindrome.');
+reverseStringRecursive('This is not a palindrome.');
+reverseString2('This is not a palindrome.');
+reverseString3('This is not a palindrome.');
+reverseString4('This is not a palindrome.');
